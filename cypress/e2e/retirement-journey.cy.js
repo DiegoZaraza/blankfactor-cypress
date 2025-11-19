@@ -8,12 +8,6 @@ describe('Blankfactor Website - Retirement Services Journey', () => {
   const retirementPage = new RetirementPage();
   const contactPage = new ContactPage();
 
-  before(() => {
-    cy.fixture('testData').then((data) => {
-      testData = data;
-    });
-  });
-
   beforeEach(() => {
     homePage.visit().verifyHeaderVisible();
   });
