@@ -9,7 +9,8 @@
     "test:firefox": "cypress run --browser firefox", 
     "test:headless": "cypress run --headless",
     "test:spec": "cypress run --spec",
-    "test:retirement": "cypress run --spec 'cypress/e2e/retirement-journey.cy.js'"
+    "test:retirement": "cypress run --spec 'cypress/e2e/retirement-journey.cy.js'",
+    "test:ci": "start-server-and-test start:ci http://localhost:3000 test"
   },
   "dependencies": {
     "cypress": "^15.6.0"
