@@ -3,12 +3,31 @@
   "version": "1.0.0",
   "description": "blankfactor QA Automation Exercise",
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox", 
+    "test:headless": "cypress run --headless",
+    "test:spec": "cypress run --spec",
+    "test:retirement": "cypress run --spec 'cypress/e2e/retirement-journey.cy.js'",
+    "test:smoke": "cypress run --spec 'cypress/e2e/retirement-journey.cy.js' --config video=false",
+    "test:record": "cypress run --record --key YOUR_RECORD_KEY",
+    "test:parallel": "cypress run --parallel --record --key YOUR_RECORD_KEY",
+    "cy:verify": "cypress verify",
+    "cy:info": "cypress info",
+    "cy:version": "cypress version",
+    "clean": "rm -rf cypress/screenshots cypress/videos",
+    "lint:cy": "eslint cypress/**/*.js",
+    "test:ci": "npm run clean && npm run test:headless"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "cypress": "^15.6.0",
-    "save-dev": "^0.0.1-security"
-  }
+    "cypress": "^15.6.0"
+  },
+  "keywords": ["cypress",
+    "e2e",
+    "testing",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC"
 }
