@@ -32,8 +32,6 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
           record: false
-        env:
-          CYPRESS_BASE_URL: https://blankfactor.com
       
       - name: Upload screenshots on failure
         if: failure()
