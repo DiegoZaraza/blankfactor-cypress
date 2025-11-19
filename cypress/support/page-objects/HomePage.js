@@ -12,6 +12,7 @@ export class HomePage {
   }
   
   verifyHeaderVisible() {
+    cy.log('Verify header is visible');
     this.header.should('be.visible');
     return this;
   }

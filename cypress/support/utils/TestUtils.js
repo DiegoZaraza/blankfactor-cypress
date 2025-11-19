@@ -69,16 +69,13 @@ export class TestUtils {
     const env = Cypress.env('environment') || 'production';
     const configs = {
       production: {
-        baseUrl: 'https://blankfactor.com',
-        apiUrl: 'https://api.blankfactor.com'
+        baseUrl: 'https://blankfactor.com'
       },
       staging: {
-        baseUrl: 'https://staging.blankfactor.com',
-        apiUrl: 'https://api-staging.blankfactor.com'
+        baseUrl: 'https://blankfactor.com'
       },
       development: {
-        baseUrl: 'https://dev.blankfactor.com',
-        apiUrl: 'https://api-dev.blankfactor.com'
+        baseUrl: 'https://blankfactor.com'
       }
     };
     

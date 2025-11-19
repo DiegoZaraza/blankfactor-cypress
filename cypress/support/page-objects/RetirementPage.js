@@ -19,6 +19,7 @@ export class RetirementPage {
   
   // Actions
   verifyUrl() {
+    cy.log('Verifying URL contains retirement');
     cy.verifyUrlContains('retirement');
     return this;
   }
@@ -31,6 +32,7 @@ export class RetirementPage {
   }
   
   getThirdTileText(aliasName = 'copiedText') {
+    cy.log('Extracting text from the 3rd tile');
     this.flipCards.eq(2).invoke("text").then((text) => {
       const aiText = text.trim();
       cy.log(`Extracted text from 3rd tile: ${aiText}`);
@@ -40,6 +42,7 @@ export class RetirementPage {
   }
   
   navigateToContact() {
+    cy.log('Navigating to Contact page via Let\'s get started button');
     this.footerHeader
       .scrollIntoView({ duration: 1000 })
       .should('be.visible')

@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "plugin:cypress/recommended"
+  ],
+  "plugins": ["cypress"],
+  "env": {
+    "cypress/globals": true
+  },
+  "rules": {
+    "cypress/no-unnecessary-waiting": "warn",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-async-tests": "error"
+  }
+}

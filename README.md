@@ -20,12 +20,9 @@ Comprehensive E2E testing suite for Blankfactor website using Cypress framework 
 
 - **Page Object Model (POM)** architecture for maintainable tests
 - **Custom Commands** for reusable functionality  
-- **Data-driven testing** with fixtures and utilities
-- **Cross-browser testing** support (Chrome, Firefox, Edge)
+- **Cross-browser testing** support (Chrome, Firefox)
 - **CI/CD ready** with parallel execution support
 - **Comprehensive reporting** with screenshots and videos
-- **Accessibility testing** capabilities
-- **Network request interception** and mocking
 
 ## 🚀 Getting Started
 
@@ -44,9 +41,6 @@ cd blankfactor-cypress
 
 # Install dependencies
 npm install
-
-# Verify Cypress installation
-npm run cy:verify
 ```
 
 ## 📁 Project Structure
@@ -56,8 +50,6 @@ blankfactor-cypress/
 ├── cypress/
 │   ├── e2e/
 │   │   ├── retirement-journey.cy.js    # Main user journey tests
-│   ├── fixtures/
-│   │   └── testData.json              # Test data and configurations
 │   ├── support/
 │   │   ├── page-objects/              # Page Object Model classes
 │   │   │   ├── HomePage.js
@@ -196,20 +188,21 @@ npx cypress run --headed --no-exit
 ### GitHub Actions Example
 
 ```yaml
-name: Cypress Tests
-on: [push, pull_request]
+name: Cypress E2E Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
-        with:
-          start: npm start
-          wait-on: 'http://localhost:3000'
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+    
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
 ```
 
 ## 🤝 Contributing
@@ -225,7 +218,6 @@ jobs:
 - Use **Page Object Model** for new page interactions
 - Add **JSDoc comments** for complex functions
 - Follow **existing naming conventions**
-- Include **test data** in fixtures when possible
 - Write **descriptive test names** and descriptions
 
 ## 📚 Resources

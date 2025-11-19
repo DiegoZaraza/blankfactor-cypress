@@ -5,6 +5,7 @@ export class ContactPage {
   
   // Actions
   verifyPageLoaded() {
+    cy.log('Verifying Contact page is loaded');
     cy.url().should('include', 'contact');
     this.pageTitle.should('be.visible');
     return this;
