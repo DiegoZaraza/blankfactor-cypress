@@ -1,0 +1,14 @@
+{
+  "name": "blankfactor-cypress",
+  "version": "1.0.0",
+  "description": "blankfactor QA Automation Exercise",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "cypress": "^15.6.0",
+    "save-dev": "^0.0.1-security"
+  }
+}
